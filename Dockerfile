@@ -9,12 +9,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --production
+RUN npm install --production --no-optional
 
 # Copy source code
 COPY . .
 
 # Build the application
+ENV ROLLUP_SKIP_NODE_BUILTINS=true
 RUN npm run build
 
 # Expose port
