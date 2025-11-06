@@ -7,9 +7,10 @@ WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
+COPY .npmrc ./
 
-# Install dependencies
-RUN npm install --omit=dev --omit=optional
+# Clean and install dependencies
+RUN rm -rf node_modules package-lock.json && npm install --omit=dev --omit=optional
 
 # Copy source code
 COPY . .
