@@ -15,7 +15,7 @@ RUN npm install --omit=dev --omit=optional
 COPY . .
 
 # Build the application
-ENV ROLLUP_SKIP_NODE_BUILTINS=true
+ENV ROLLUP_USE_NATIVE_MODULES=false
 RUN npm run build
 
 # Expose port
