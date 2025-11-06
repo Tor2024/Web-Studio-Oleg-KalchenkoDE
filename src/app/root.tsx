@@ -1,7 +1,7 @@
-import { Links, Meta, Scripts } from "react-router";
+import { Links, Meta, Scripts, Outlet } from "react-router";
 import "./../index.css";
 
-export default function Root() {
+export function Root() {
   return (
     <html lang="en">
       <head>
@@ -11,7 +11,7 @@ export default function Root() {
         <Links />
       </head>
       <body>
-        <div id="root"></div>
+        <Outlet />
         <Scripts />
       </body>
     </html>

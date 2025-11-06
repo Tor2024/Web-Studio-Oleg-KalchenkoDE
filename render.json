@@ -4,12 +4,16 @@
       "type": "web",
       "name": "web-studio-oleh-kalchenko",
       "runtime": "node",
-      "buildCommand": "npm install && npm run build",
+      "buildCommand": "npm install --omit=dev --omit=optional && npm run build",
       "startCommand": "npm start",
       "envVars": [
         {
           "key": "NODE_ENV",
           "value": "production"
+        },
+        {
+          "key": "ROLLUP_USE_NATIVE_MODULES",
+          "value": "false"
         }
       ]
     }

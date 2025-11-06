@@ -6,8 +6,8 @@
 		"node": ">=20.0.0"
 	},
 	"scripts": {
-		"dev": "react-router dev",
-		"build": "react-router build",
+		"dev": "ROLLUP_USE_NATIVE_MODULES=false react-router dev",
+		"build": "ROLLUP_USE_NATIVE_MODULES=false react-router build",
 		"start": "node server.js",
 		"typecheck": "react-router typegen && tsc --noEmit"
 	},
@@ -60,6 +60,7 @@
 		"react-router-hono-server": "^2.13.0",
 		"recharts": "^2.12.0",
 		"remark-gfm": "4.0.0",
+		"rollup": "^4.52.5",
 		"serialize-error": "^12.0.0",
 		"sonner": "^2.0.3",
 		"stripe": "^18.2.1",
@@ -87,8 +88,10 @@
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
 		"@types/ws": "^8.18.1",
+		"@vitejs/plugin-react": "^5.1.0",
 		"autoprefixer": "^10.4.21",
 		"babel-plugin-react-require": "^4.0.3",
+		"cross-env": "^10.1.0",
 		"fast-glob": "^3.3.3",
 		"jsdom": "^26.1.0",
 		"micromatch": "^4.0.8",
@@ -101,6 +104,12 @@
 		"vitest": "^3.2.4"
 	},
 	"overrides": {
-		"next-themes": "^0.3.0"
+		"next-themes": "^0.3.0",
+		"rollup": {
+			"@rollup/rollup-win32-x64-msvc": "npm:@rollup/rollup-linux-x64-gnu@4.52.5"
+		}
+	},
+	"optionalDependencies": {
+		"@rollup/rollup-win32-x64-msvc": "^4.52.5"
 	}
 }
